@@ -29,3 +29,11 @@ Route::get('/', function () {
 Route::group(['middleware' => ['web']], function () {
     //
 });
+
+
+/*
+	API routes 
+*/
+Route::group(array('prefix' => 'api/v1', 'middleware' => 'auth.basic'), function() {
+	Route::resource('mobile_user', 'MobileUserController', array('only' => array('index', 'store', 'show', 'update', 'destroy')));
+});
