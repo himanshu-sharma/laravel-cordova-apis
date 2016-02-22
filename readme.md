@@ -1,5 +1,6 @@
 Laravel Application to create and manage the common API's data to/from cordova enabled mobile apps.
 
+http://docs.phonegap.com/plugin-apis/
 https://www.npmjs.com/package/cordova-plugin-device
 
     Device info: device.cordova, device.model, device.platform, device.uuid, device.version, device.manufacturer, device.isVirtual and device.serial
