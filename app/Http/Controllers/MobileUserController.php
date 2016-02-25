@@ -20,7 +20,8 @@ class MobileUserController extends Controller
     public function index()
     {
         $data = MobileUser::all();
-        return $data->toJson();
+        return Response()->json(array('success' => true, 'mobile_users' => $data->toArray()), 200);
+        //return $data->toJson();
     }
 
     /**
@@ -66,8 +67,7 @@ class MobileUserController extends Controller
     {
         // Make sure current user owns the requested resource
         $mobile_user = MobileUser::where('id', $id)->take(1)->get();
-        return Response()->json(array('success' => true, 'users' => $mobile_user->toArray()), 200
-        );
+        return Response()->json(array('success' => true, 'users' => $mobile_user->toArray()), 200);
     }
 
     /**
